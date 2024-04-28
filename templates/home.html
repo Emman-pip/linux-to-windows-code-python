@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home</title>
+	<script src="{{ url_for('static', filename='script.js')}}"></script>
+</head>
+<body>
+
+	<form action="/" method="POST">
+		<input type="text" name="data" id="data" placeholder="ENTER DATA HERE">
+		<input type="submit" value="submit">
+	</form>
+	{% for i in data %}
+	<div>{{ i.id }}        {{ i.data }}</div>
+	{% endfor %}
+	<div id="timer"></div>
+	<script>
+		setInterval(()=>{
+			timer("timer")
+		}, 10)
+	</script>
+</body>
+</html>
